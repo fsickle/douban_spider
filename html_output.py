@@ -12,10 +12,9 @@ class HtmlOutput():
     def output_html(self):
         wb = Workbook() #新建新的工作表
         sheet = wb.active
-        sheet.title = traget_tag
         sheet.append(['序号','title','rating_nums','pl_nums','link'])
         count=1
-        for bl in datas:
+        for bl in self.datas:
             sheet.append([count,bl[0],float(bl[1]),int(bl[2]),bl[3]])
             count+=1
         save_path='book_list.xlsx'
